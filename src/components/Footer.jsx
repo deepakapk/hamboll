@@ -79,11 +79,11 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400">
 
               <li>
-                Email: contact@automationx.com
+                Email: solutions@Hamboll.com
               </li>
 
               <li>
-                Phone: +91 98765 43210
+                Phone: +91 7027131110
               </li>
 
               <li>
