@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const testimonials = [
   {
-    name: "Aarav James Walker",
+    name: "James Walker",
     role: "Product Operations Director, Canada",
     text: "Working with Hamboll was refreshingly different. They didn't push tools - they designed solutions. Their Pyton-driven automatin and AI-based invoice processing reduced our operational workload signficantly. What stood out most was their ethical approach and focus on ROI. Every automation had a measurable imact. Highly professional team.",
   },
