@@ -59,7 +59,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl  md:text-6xl font-bold mb-6 p-5 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+          className="text-4xl  md:text-6xl font-bold mb-6 pb-5 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
         >
           Powering Intelligent Evolution
         </motion.h2>
