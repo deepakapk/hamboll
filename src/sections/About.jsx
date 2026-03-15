@@ -58,7 +58,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+          className="text-4xl  md:text-6xl font-bold mb-10 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
         >
           Powering Intelligent Evolution
         </motion.h2>
@@ -80,9 +80,9 @@ export default function About() {
 
           {[
             { number: 98, label: "Accuracy %" },
-            { number: 250, label: "Enterprise Clients" },
-            { number: 1200, label: "Automations Deployed" },
-            { number: 24, label: "Countries Served" },
+            { number: 25, label: "Enterprise Clients" },
+            { number: 483, label: "Automations Deployed" },
+            { number: 7, label: "Countries Served" },
           ].map((stat, i) => (
             <motion.div
               key={i}
