@@ -136,7 +136,7 @@ function Hero() {
           className="mt-10 flex flex-col md:flex-row gap-6 justify-center"
         >
           <button className="bg-cyan-500 hover:bg-cyan-400 text-black px-8 py-3 rounded-full font-semibold transition shadow-lg shadow-cyan-500/30">
-            Get Started
+            <a href="#aboutmain" className="text-black">Get Started</a>
           </button>
 
           <button className="border border-cyan-400 text-cyan-400 px-8 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-black transition">

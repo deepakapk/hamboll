@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaLinkedin } from "react-icons/fa";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -75,7 +76,10 @@ function Navbar() {
 
         {/* Desktop Button */}
         <button className="hidden md:block bg-cyan-500 hover:bg-cyan-400 text-black px-4 py-2 rounded-full font-semibold transition">
-          Get Started
+          <a href="https://www.linkedin.com/company/hamboll/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="inline-block mr-2 w-5 h-5" />
+            LinkedIn
+          </a>
         </button>
 
         {/* Animated Burger */}
@@ -127,7 +131,10 @@ function Navbar() {
               variants={itemVariants}
               className="bg-cyan-500 hover:bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold transition w-full"
             >
-              Get Started
+              <a href="https://www.linkedin.com/company/hamboll/" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="inline-block mr-2 w-5 h-5" />
+                LinkedIn
+              </a>
             </motion.button>
           </motion.div>
         )}
