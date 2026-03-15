@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, Workflow, Database, Cpu, Shield, Settings } from "lucide-react";
+import { Bot, Workflow, Database, Cpu, Shield, Settings, Activity, TrendingUp } from "lucide-react";
 
 const services = [
   {
