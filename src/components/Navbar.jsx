@@ -84,7 +84,7 @@ function Navbar() {
             <Link to="/contact">Contact</Link>
           </li>
           <li className="hover:text-cyan-400 cursor-pointer">
-            <button type="button" onClick={() => setProductModalOpen(true)}>Product</button>
+            <button type="button" onClick={() => setProductModalOpen(true)}>PRODUCT</button>
           </li>
         </ul>
 
