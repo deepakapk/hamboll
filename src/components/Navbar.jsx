@@ -150,7 +150,7 @@ function Navbar() {
                 setProductModalOpen(true);
               }}
             >
-              Product
+              PRODUCT
             </Motion.button>
 
             <Motion.button
