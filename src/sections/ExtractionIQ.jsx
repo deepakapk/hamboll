@@ -1,14 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import { motion, motion as Motion } from "framer-motion";
+import { createElement } from "react";
 import {
   ArrowUpRight,
+  AlertTriangle,
   Bot,
   Check,
+  CheckCircle2,
   ClipboardCheck,
   ChevronRight,
   Circle,
   Database,
   FileText,
+  FileWarning,
   LockKeyhole,
   Play,
   ScanSearch,
@@ -25,12 +29,12 @@ const metrics = [
 ];
 
 const workflowSteps = [
-  { icon: FileText, number: "01", title: "Classify", text: "Identify document types and select the right processing route." },
-  { icon: ScanSearch, number: "02", title: "Extract", text: "Capture invoice details, line items, discounts, and taxes with Azure AI Foundry support." },
-  { icon: ClipboardCheck, number: "03", title: "Validate", text: "Reconcile required fields, line-item sums, discounts, taxes, and totals." },
-  { icon: ShieldCheck, number: "04", title: "Assess risk", text: "Apply configured policies and surface the cases that need attention." },
-  { icon: Database, number: "05", title: "Detect duplicates", text: "Compare historical records to identify potential duplicate invoices." },
-  { icon: Workflow, number: "06", title: "Resolve", text: "Coordinate outcomes and route exceptions to authorised reviewers." },
+  { icon: FileText, number: "01", title: "Classification Agent", text: "Identify document types and determine the appropriate processing route." },
+  { icon: ScanSearch, number: "02", title: "Extraction Agent", text: "Capture invoice details, line items, discounts, and tax amounts, using Microsoft Azure AI Foundry to support AI-assisted interpretation when local extraction needs assistance." },
+  { icon: ClipboardCheck, number: "03", title: "Validation Agent", text: "Check required fields and reconcile line-item sums, discounts, and combined taxes against invoice totals." },
+  { icon: ShieldCheck, number: "04", title: "Policy and Risk Assessment Agents", text: "Apply configured business rules and identify cases requiring attention." },
+  { icon: Database, number: "05", title: "Duplicate Detection Agent", text: "Check historical records for potential duplicate invoices." },
+  { icon: Workflow, number: "06", title: "Resolution Agent", text: "Coordinate processing outcomes and route exceptions to human reviewers." },
 ];
 
 const ExtractionIQ = () => {
@@ -51,12 +55,11 @@ const ExtractionIQ = () => {
           <Motion.div initial={{ opacity: 0, x: 40, rotateY: 8 }} animate={{ opacity: 1, x: 0, rotateY: 0 }} transition={{ duration: 0.9, delay: 0.15 }} className="relative [perspective:1200px]">
             <div className="absolute -inset-5 rounded-[2rem] bg-cyan-400/10 blur-3xl" />
             <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#0b1117]/95 shadow-2xl shadow-cyan-950/50">
-              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4"><div className="flex items-center gap-2 text-sm font-medium"><Bot className="h-4 w-4 text-cyan-400" /> Control center</div><div className="flex items-center gap-2 text-xs text-emerald-400"><span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" /> All systems operational</div></div>
+              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4"><div><div className="flex items-center gap-2 text-sm font-medium"><Bot className="h-4 w-4 text-cyan-400" /> Dashboard view</div><p className="mt-1 text-[11px] text-gray-500">Invoices / human in the loop</p></div><div className="flex items-center gap-2 text-xs text-emerald-400"><span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" /> Live processing</div></div>
               <div className="grid gap-6 p-5 md:p-7">
-                <div className="flex items-end justify-between"><div><p className="text-sm text-gray-500">Extraction IQ pulse</p><p className="mt-1 text-3xl font-semibold">+24.8%</p></div><div className="rounded-lg border border-cyan-400/20 bg-cyan-400/10 px-3 py-2 text-xs text-cyan-300">This month</div></div>
-                <div className="flex h-28 items-end gap-2 border-b border-white/10 pb-3">{[32, 47, 39, 64, 52, 75, 61, 88, 72, 100, 83, 94, 78, 108, 96, 118].map((height, index) => <Motion.div key={height + index} initial={{ height: 0 }} animate={{ height: `${height}%` }} transition={{ delay: 0.4 + index * 0.04, duration: 0.5 }} className="flex-1 rounded-t-sm bg-gradient-to-t from-cyan-500/20 to-cyan-400" />)}</div>
-                <div className="grid gap-3 sm:grid-cols-3">{metrics.map((metric) => <div key={metric.label} className="rounded-xl border border-white/10 bg-white/[0.03] p-4"><p className="text-lg font-semibold">{metric.value}</p><p className="mt-1 text-[11px] text-gray-500">{metric.label}</p><p className="mt-3 text-xs text-emerald-400">{metric.change}</p></div>)}</div>
-                <div className="rounded-xl border border-white/10 bg-black/30 p-4"><div className="mb-4 flex items-center justify-between text-xs text-gray-400"><span>Invoice processing queue</span><span className="text-cyan-400">Live view</span></div>{[['Northstar Foods', 'Validation', 'Running'], ['Aster Group', 'Human review', 'Attention'], ['Marlow & Co.', 'Complete', 'Ready']].map(([supplier, stage, status], index) => <div key={supplier} className="flex items-center gap-3 border-t border-white/10 py-3 text-sm"><span className="flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-400/10 text-cyan-400"><Play className="h-3 w-3 fill-current" /></span><span className="flex-1 text-gray-300">{supplier}<span className="ml-2 text-xs text-gray-600">{stage}</span></span><span className="text-xs text-gray-500">{status}</span><Circle className={`h-2 w-2 fill-current ${index === 1 ? "text-amber-400" : "text-emerald-400"}`} /></div>)}</div>
+                <div className="flex items-end justify-between"><div><p className="text-sm text-gray-500">Documents needing review</p><p className="mt-1 text-3xl font-semibold">124</p></div><div className="rounded-lg border border-cyan-400/20 bg-cyan-400/10 px-3 py-2 text-xs text-cyan-300">Today</div></div>
+                <div className="grid gap-3 sm:grid-cols-3">{[["86", "Validated", "text-emerald-400"], ["27", "Human review", "text-amber-400"], ["11", "Exceptions", "text-rose-400"]].map(([value, label, color]) => <div key={label} className="rounded-xl border border-white/10 bg-white/[0.03] p-4"><p className="text-lg font-semibold">{value}</p><p className="mt-1 text-[11px] text-gray-500">{label}</p><p className={`mt-3 text-xs ${color}`}>Invoice queue</p></div>)}</div>
+                <div className="rounded-xl border border-white/10 bg-black/30 p-4"><div className="mb-3 flex items-center justify-between text-xs text-gray-400"><span>Invoice review queue</span><span className="text-cyan-400">Open dashboard</span></div>{[["INV-2048.pdf", "Northstar Foods", "Line mismatch", FileWarning, "text-amber-400"], ["INV-2047.pdf", "Aster Group", "Possible duplicate", AlertTriangle, "text-rose-400"], ["INV-2046.pdf", "Marlow & Co.", "Validated", CheckCircle2, "text-emerald-400"]].map(([file, supplier, issue, StatusIcon, color]) => <div key={file} className="flex items-center gap-3 border-t border-white/10 py-3 text-sm"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan-400/10 text-cyan-400"><FileText className="h-4 w-4" /></span><span className="min-w-0 flex-1"><span className="block truncate text-gray-200">{file}</span><span className="block truncate text-[11px] text-gray-600">{supplier}</span></span><span className={`hidden items-center gap-1 text-[11px] sm:flex ${color}`}>{createElement(StatusIcon, { className: "h-3 w-3" })}{issue}</span><Circle className={`h-2 w-2 shrink-0 fill-current ${color}`} /></div>)}</div>
               </div>
             </div>
           </Motion.div>

@@ -83,8 +83,8 @@ function Navbar() {
           <li className="hover:text-cyan-400 cursor-pointer">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="hover:text-cyan-400 cursor-pointer">
-            <button type="button" onClick={() => setProductModalOpen(true)}>PRODUCT</button>
+          <li className="hover:text-cyan-400 cursor-pointer uppercase">
+            <button type="button" onClick={() => setProductModalOpen(true)}>PRODUCTS</button>
           </li>
         </ul>
 
