@@ -9,6 +9,7 @@ import ScrollToTop from "./utilities/ScollToTop";
 import ServicesPage from "./Pages/ServicesPage";
 import ContactPage from "./Pages/ContactPage";
 import { ToastContainer } from "react-toastify";
+import ProductPage from "./Pages/ProductPage";
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/product" element={<ProductPage/>} />
         </Routes>
         <Footer />
       </div>
