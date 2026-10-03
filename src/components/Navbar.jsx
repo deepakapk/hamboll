@@ -83,18 +83,18 @@ function Navbar() {
           <li className="hover:text-cyan-400 cursor-pointer">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="hover:text-cyan-400 cursor-pointer uppercase">
+          {/* <li className="hover:text-cyan-400 cursor-pointer uppercase">
             <button type="button" onClick={() => setProductModalOpen(true)}>PRODUCTS</button>
-          </li>
+          </li> */}
         </ul>
 
         {/* Desktop Button */}
-        <button className="hidden md:block bg-cyan-500 hover:bg-cyan-400 text-black px-4 py-2 rounded-full font-semibold transition">
+        {/* <button className="hidden md:block bg-cyan-500 hover:bg-cyan-400 text-black px-4 py-2 rounded-full font-semibold transition">
           <a href="https://www.linkedin.com/company/hamboll/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="inline-block mr-2 w-5 h-5" />
             LinkedIn
           </a>
-        </button>
+        </button> */}
 
         {/* Animated Burger */}
         <button
@@ -153,7 +153,7 @@ function Navbar() {
               PRODUCT
             </Motion.button>
 
-            <Motion.button
+            {/* <Motion.button
               variants={itemVariants}
               className="bg-cyan-500 hover:bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold transition w-full"
             >
@@ -161,7 +161,7 @@ function Navbar() {
                 <FaLinkedin className="inline-block mr-2 w-5 h-5" />
                 LinkedIn
               </a>
-            </Motion.button>
+            </Motion.button> */}
           </Motion.div>
         )}
       </AnimatePresence>
